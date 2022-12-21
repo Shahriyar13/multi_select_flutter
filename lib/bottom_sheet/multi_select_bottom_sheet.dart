@@ -147,12 +147,7 @@ class _MultiSelectBottomSheetState<T> extends State<MultiSelectBottomSheet<T>> {
         activeColor: widget.colorator != null
             ? widget.colorator!(item.value) ?? widget.selectedColor
             : widget.selectedColor,
-        title: Text(
-          item.title.data ?? '',
-          style: item.selected
-              ? widget.selectedItemsTextStyle
-              : widget.itemsTextStyle,
-        ),
+        title: item.title,
         controlAffinity: ListTileControlAffinity.leading,
         onChanged: (checked) {
           setState(() {
@@ -188,20 +183,7 @@ class _MultiSelectBottomSheetState<T> extends State<MultiSelectBottomSheet<T>> {
                 : widget.selectedColor != null
                     ? widget.selectedColor
                     : Theme.of(context).primaryColor.withOpacity(0.35),
-        label: Text(
-          item.title.data ?? '',
-          style: _selectedValues.contains(item.value)
-              ? TextStyle(
-                  color: widget.selectedItemsTextStyle?.color ??
-                      widget.colorator?.call(item.value) ??
-                      widget.selectedColor?.withOpacity(1) ??
-                      Theme.of(context).primaryColor,
-                  fontSize: widget.selectedItemsTextStyle != null
-                      ? widget.selectedItemsTextStyle!.fontSize
-                      : null,
-                )
-              : widget.itemsTextStyle,
-        ),
+        label: item.title,
         selected: item.selected,
         onSelected: (checked) {
           if (checked) {

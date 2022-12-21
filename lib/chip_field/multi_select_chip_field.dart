@@ -340,19 +340,7 @@ class __MultiSelectChipFieldViewState<V>
                               : Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: widget.title != null
-                                      ? Text(
-                                          widget.title!.data ?? '',
-                                          style: TextStyle(
-                                              color: widget.title!.style != null
-                                                  ? widget.title!.style!.color
-                                                  : null,
-                                              fontSize:
-                                                  widget.title!.style != null
-                                                      ? widget.title!.style!
-                                                              .fontSize ??
-                                                          18
-                                                      : 18),
-                                        )
+                                      ? widget.title
                                       : Text(
                                           "Select",
                                           style: TextStyle(fontSize: 18),
@@ -499,7 +487,7 @@ class __MultiSelectChipFieldViewState<V>
         label: Container(
           width: widget.chipWidth,
           child: Text(
-            item.title.data ?? '',
+            item.value.toString(),
             overflow: TextOverflow.ellipsis,
             style: _selectedValues.contains(item.value)
                 ? TextStyle(
