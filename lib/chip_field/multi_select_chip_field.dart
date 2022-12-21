@@ -499,7 +499,7 @@ class __MultiSelectChipFieldViewState<V>
         label: Container(
           width: widget.chipWidth,
           child: Text(
-            item.label,
+            item.title.data!,
             overflow: TextOverflow.ellipsis,
             style: _selectedValues.contains(item.value)
                 ? TextStyle(

@@ -35,7 +35,7 @@ class MultiSelectActions<T> {
     if (val != null && val.trim().isNotEmpty) {
       List<MultiSelectItem<T>> filteredItems = [];
       for (var item in allItems) {
-        if (item.label.toLowerCase().contains(val.toLowerCase())) {
+        if (item.title.data!.toLowerCase().contains(val.toLowerCase())) {
           filteredItems.add(item);
         }
       }
@@ -55,9 +55,9 @@ class MultiSelectActions<T> {
     List<MultiSelectItem<T>> _nonSelectedItems = [];
 
     _nonSelectedItems.addAll(list.where((element) => !element.selected));
-    _nonSelectedItems.sort((a, b) => a.label.compareTo(b.label));
+    _nonSelectedItems.sort((a, b) => a.title.data!.compareTo(b.title.data!));
     _selectedItems.addAll(list.where((element) => element.selected));
-    _selectedItems.sort((a, b) => a.label.compareTo(b.label));
+    _selectedItems.sort((a, b) => a.title.data!.compareTo(b.title.data!));
 
     return [..._selectedItems, ..._nonSelectedItems];
   }

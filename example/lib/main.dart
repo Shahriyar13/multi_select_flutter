@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Animal(id: 27, name: "Dolphin"),
   ];
   final _items = _animals
-      .map((animal) => MultiSelectItem<Animal>(animal, animal.name))
+      .map((animal) => MultiSelectItem<Animal>(animal, Text(animal.name)))
       .toList();
   //List<Animal> _selectedAnimals = [];
   List<Animal> _selectedAnimals2 = [];
