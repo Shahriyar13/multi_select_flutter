@@ -1,5 +1,4 @@
-
-# Multi Select Flutter
+# Fork of Multi Select Flutter: Customize Items
 
 [![Pub Version](https://img.shields.io/pub/v/multi_select_flutter.svg)](https://pub.dev/packages/multi_select_flutter)
 
